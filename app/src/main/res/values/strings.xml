@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Personal Physical Tracker</string>
+    <string name="title">Personal Physical Tracker</string>
+    <string name="hello">Hello, \n you are currently…</string>
+    <string name="currentActivity">current activity</string>
+    <string name="startStopActivity">Start/Stop Activity</string>
+    <string name="changeActivity">Change Activity</string>
+    <string name="history">History</string>
+    <string name="statistics">Statistics</string>
+    <string name="startStopRecognition">Start/Stop Activity Recognition</string>
+    <string name="activity">Activity</string>
+    <string name="activityTimeRange">from %1$s to %2$s</string>
+    <string name="activityDetails">%1$s for %2$d hours %3$d minutes %4$d seconds</string>
+    <string name="date_text">%1$s from %2$s to %3$s</string>
+</resources>

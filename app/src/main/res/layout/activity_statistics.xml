@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/txtStatisticsTitle"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".StatisticsActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="sans-serif-condensed"
+        android:text="@string/statistics"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Contenuto scrollabile -->
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/textView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/txtChartTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="16sp"
+                android:fontFamily="sans-serif-condensed"
+                android:text="Monthly Summary will appear here" />
+
+            <!-- Grafico a torta -->
+            <com.github.mikephil.charting.charts.PieChart
+                android:id="@+id/pieChartActivityTypes"
+                android:layout_width="match_parent"
+                android:layout_height="300dp" />
+
+            <TextView
+                android:id="@+id/txtMonthlySummary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:gravity="center"
+                android:textSize="16sp"
+                android:fontFamily="sans-serif-condensed"
+                android:text="Monthly summary of registered activity" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="20dp">
+
+
+                <!-- Titolo sopra il grafico a barre -->
+                <TextView
+                    android:id="@+id/txtWeeklyChartTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Weekly Steps"
+                    android:textSize="16sp"
+                    android:fontFamily="sans-serif-condensed"
+                    android:textColor="?attr/colorOnSurface"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toTopOf="@id/barChartDailySteps"
+                    android:layout_marginBottom="8dp" />
+
+                <!-- Grafico a barre -->
+                <com.github.mikephil.charting.charts.BarChart
+                    android:id="@+id/barChartDailySteps"
+                    android:layout_width="0dp"
+                    android:layout_height="300dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/txtWeeklyChartTitle" />
+
+                <!-- Pulsante Previous -->
+                <ImageButton
+                    android:id="@+id/btnPreviousWeek"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="previous_week"
+                    android:src="@drawable/baseline_arrow_left_24"
+                    app:layout_constraintEnd_toStartOf="@id/txtWeekRange"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/barChartDailySteps"
+                    app:tint="?attr/colorOnSurface" />
+
+                <!-- Testo per il range della settimana -->
+                <TextView
+                    android:id="@+id/txtWeekRange"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginTop="18dp"
+                    android:gravity="center"
+                    android:text="18/11 - 24/11"
+                    android:fontFamily="sans-serif-condensed"
+                    android:textAppearance="?attr/textAppearanceBodyMedium"
+                    android:textColor="?attr/colorOnSurface"
+                    app:layout_constraintEnd_toStartOf="@id/btnNextWeek"
+                    app:layout_constraintStart_toEndOf="@id/btnPreviousWeek"
+                    app:layout_constraintTop_toBottomOf="@id/barChartDailySteps" />
+
+                <!-- Pulsante Next -->
+                <ImageButton
+                    android:id="@+id/btnNextWeek"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="next_week"
+                    android:src="@drawable/baseline_arrow_right_24"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/txtWeekRange"
+                    app:layout_constraintTop_toBottomOf="@id/barChartDailySteps"
+                    app:tint="?attr/colorOnSurface" />
+
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
